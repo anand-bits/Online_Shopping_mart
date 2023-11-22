@@ -10,6 +10,7 @@ import orderRouter from "../routes/orderRoutes.js";
 import Stripe from "stripe";
 import Order from "../model/Order.js";
 import couponRouter from "../routes/couponRoutes.js";
+import path from "path";
 
 const app = express();
 
@@ -68,7 +69,6 @@ app.post('/webhook', express.raw({ type: 'application/json' }), async (request, 
   }
 });
 
-app.use(express.json());
 
 // Routes
 app.use('/api/v1/user', userRoutes);
