@@ -69,6 +69,7 @@ app.post('/webhook', express.raw({ type: 'application/json' }), async (request, 
   }
 });
 
+app.use(express.json());
 
 // Routes
 app.use('/api/v1/user', userRoutes);
